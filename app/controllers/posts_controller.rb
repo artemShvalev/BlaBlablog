@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
-
-
+  #http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
   def  index
     @post = Post.all
   end
@@ -20,17 +18,28 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    authorize @post
 
-    if(@post.update(post_params))
+    if (@post.update(post_params))
       redirect_to @post
     else
       render 'edit'
       end
   end
 
-  def destroy
+  def publish
     @post = Post.find(params[:id])
-    @post.destroy
+    authorize @post, :update?
+    @post.publish!
+    redirect_to @post
+  end
+
+
+
+  def destroy
+    #@post = Post.find(params[:id])
+    #@post = Post.destroy(params[:id])
+    #@post.destroy
     redirect_to posts_path
   end
 
