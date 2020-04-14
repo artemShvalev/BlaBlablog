@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get ':controller(/:action(/:id(.:format)))'
   get 'about' => 'pages#about', as:'about'
   get  ':controller(/:action(/:users/sign_up(.:format)))' => 'devise/registrations#new'
+  get '/auth/:provider/callback', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
     #post ':user_registration(/users(.:format)'
 
   #post ':controller(/:action(/:id(.:format)))'
