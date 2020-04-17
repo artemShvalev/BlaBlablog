@@ -41,10 +41,12 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  
+  gem 'rspec-rails', '~> 4.0.0'
 
 end
 
-gem 'bootsnap'
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

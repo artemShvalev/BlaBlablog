@@ -2,7 +2,7 @@
 <p><%= @post.body %> </p>
 <hr>
 <%= link_to "Редактировать",  edit_post_path(@post), :class => "btn btn-warning"%>
-<%= link_to "Удалить пост", edit_post_path(@post), method: :delete, :class => 'btn btn-outline-primary' %>
+<%= link_to "Удалить пост", post_path(@post), method: :delete, :class => 'btn btn-outline-primary' %>
 <hr>
 <h2>Все комментарии:</h2>
 <% @post.comments.each do |comment| %>
