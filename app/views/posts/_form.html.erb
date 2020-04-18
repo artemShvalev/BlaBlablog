@@ -1,0 +1,12 @@
+<%= simple_form_for post do |f| %>
+  <% if post.errors.any? %>
+    <% post.errors.full_messages.each do |msg| %>
+      <div class='alert alert-danger'><%= msg %></div>
+    <% end %>
+  <% end %>
+
+  <%= f.input :title, label: 'Название', class: 'form-control' %>
+  <%= f.input :body, label: 'Текст статьи', as: :text, required: true, class: 'form-control' %>
+
+  <%= f.submit class: 'btn, btn-success' %>
+<% end %>

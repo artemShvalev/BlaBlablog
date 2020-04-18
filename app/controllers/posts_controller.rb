@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-
-  def  index
+  def index
     @post = Post.all
   end
 
@@ -24,7 +23,7 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       render 'edit'
-      end
+    end
   end
 
   def publish
@@ -34,12 +33,9 @@ class PostsController < ApplicationController
     redirect_to @post
   end
 
-
-
   def destroy
-    #@post = Post.find(params[:id])
-    #@post = Post.destroy(params[:id])
-    #@post.destroy
+    @post = Post.find(params[:id])
+    @post.destroy
     redirect_to posts_path
   end
 
@@ -47,13 +43,15 @@ class PostsController < ApplicationController
     #render plain: [:post]params.inspect
     @post = Post.new(post_params)
     if @post.save
-    redirect_to @post
+      redirect_to @post
     else
       render 'new'
-      end
+    end
   end
-  private def post_params
-    params.require(:post).permit(:title,:body)
 
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
   end
 end

@@ -12,7 +12,7 @@ Devise.setup do |config|
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
-  config.parent_controller = 'DeviseController'
+  # config.parent_controller = 'DeviseController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -21,10 +21,10 @@ Devise.setup do |config|
   config.mailer_sender = 'chamshell@gmail.com'
 
   # Configure the class responsible to send e-mails.
-   config.mailer = 'Devise::MyMailer'
+  # config.mailer = 'Devise::MyMailer'
 
   # Configure the parent class responsible to send e-mails.
-  config.parent_mailer = 'ActionMailer::Base'
+  # config.parent_mailer = 'ActionMailer::Base'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -117,10 +117,10 @@ Devise.setup do |config|
   # config.pepper = 'c11144251f44181fe8b6d660bc1c5f6afdc18253aba662d2268214047dda280a41fae785f7fea568ca83493391cb70b673b2dbdb544724e77ba5b3601672f916'
 
   # Send a notification to the original email when the user's email is changed.
-   config.send_email_changed_notification = false
+   # config.send_email_changed_notification = false
 
   # Send a notification email when the user's password is changed.
-  config.send_password_change_notification = false
+  # config.send_password_change_notification = false
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -145,7 +145,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = false
+  config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
