@@ -8,14 +8,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   root 'posts#index', as:('home')
-  root 'user_registration#new'
-  get ':controller(/:action(/:id(.:format)))'
   get 'about' => 'pages#about', as:'about'
-  get  ':controller(/:action(/:users/sign_up(.:format)))' => 'devise/registrations#new'
   get '/auth/:provider/callback', to: 'sessions#create'
-    #delete '/logout', to: 'sessions#destroy'
-
-
 end
-
-
