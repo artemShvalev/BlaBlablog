@@ -13,18 +13,27 @@
    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
      <h5 class="my-0 mr-md-auto font-weight-bold">Howen Blog</h5>
       <nav class="my-2 my-md-0 mr-md-3">
-       <span class="p-2 text-dark" ><%= link_to "Главная страница", home_path %></span>
+        <span class="p-2 text-dark" ><%= link_to "Главная страница", home_path %></span>
         <span class="p-2 text-dark" ><%= link_to "Обо мне", about_path %></span>
-         <span class="p-2 text-dark"><%= link_to "Добавление статьи", new_post_path %></span>
-          <span class="p-2 text-dark" ><%= link_to "Зарегистрироваться", new_user_registration_path%></span>
-           <span class="p-2 text-dark"><%= link_to "Войти", new_user_session_path %></span>
-           </nav>
-           </div>
-             <div class = 'container'>
-               <p class="notice"><%= notice %></p>
-               <p class="alert"><%= alert %></p>
-               <%= yield %>
-
-               </div>
+        <span class="p-2 text-dark"><%= link_to "Добавление статьи", new_post_path %></span>
+        <% if user_signed_in? %>
+          <span class="p-2 text-dark" >
+            <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+          </span>
+        <% else %>
+          <span class="p-2 text-dark" >
+            <%= link_to "Зарегистрироваться", new_user_registration_path %>
+          </span>
+          <span class="p-2 text-dark">
+            <%= link_to "Войти", new_user_session_path %>
+          </span>
+        <% end %>
+      </nav>
+    </div>
+    <div class = 'container'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
