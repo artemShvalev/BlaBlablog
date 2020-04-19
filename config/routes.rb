@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   root 'posts#index', as:('home')
   get 'about' => 'pages#about', as:'about'
-  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/:facebook/callback', to: 'sessions#create'
 end
