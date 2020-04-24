@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap'
 
 group :development, :test do
+     gem 'dotenv-rails', groups: [:development, :test]
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
@@ -63,3 +64,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem "pundit"
+
+gem 'bootstrap', '~> 4.4.1'
