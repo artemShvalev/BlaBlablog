@@ -136,7 +136,8 @@ GEM
     orm_adapter (0.5.0)
     popper_js (1.16.0)
     public_suffix (4.0.3)
-    puma (3.12.6)
+    puma (4.3.9)
+      nio4r (~> 2.0)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
     rack (2.2.2)
@@ -267,7 +268,7 @@ DEPENDENCIES
   letter_opener
   omniauth
   omniauth-facebook
-  puma (~> 3.12)
+  puma (~> 4.3)
   pundit
   rails (~> 5.1.7)
   rspec-rails (~> 4.0.0)
